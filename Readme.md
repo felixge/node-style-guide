@@ -13,7 +13,8 @@ according to your preferences.
 
 ## 2 Spaces for indention
 
-Use 2 spaces for indenting your code. Never mix tabs and spaces.
+Use 2 spaces for indenting your code and swear an oath to never mix tabs and
+spaces in your code - a special kind of hell is awaiting you otherwise.
 
 ## Use Semicolons
 
