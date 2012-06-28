@@ -16,7 +16,7 @@ according to your preferences.
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
 spaces in your code - a special kind of hell is awaiting you otherwise.
 
-## Trailing whitespace
+## No trailing whitespace
 
 Just like you brush your teeth after every meal, you clean up any trailing
 whitespace in your JS files before committing. Otherwise the rotten smell of
@@ -77,7 +77,7 @@ if (true)
 
 Also, notice the use of whitespace before and after the condition statement.
 
-## Variable declarations
+## Declare one variable per var statement
 
 Declare one variable per var statement, it makes it easier to re-order the
 lines. Ignore [Crockford][crockfordconvention] on this, and put those
@@ -86,7 +86,7 @@ declarations wherever they make sense.
 *Right:*
 
 ```js
-var keys = ['foo', 'bar'];
+var keys   = ['foo', 'bar'];
 var values = [23, 42];
 
 var object = {};
@@ -112,11 +112,11 @@ while (items.length) {
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
-## Variable and property names
+## Use lowerCamelCase for variables, properties and function names
 
-Variables and properties should use [lower camel case][camelcase]
-capitalization. They should also be descriptive. Single character variables and
-uncommon abbreviations should generally be avoided.
+Variables, properties and function names should use `lowerCamelCase`.  They
+should also be descriptive. Single character variables and uncommon
+abbreviations should generally be avoided.
 
 *Right:*
 
@@ -130,11 +130,9 @@ var adminUser = db.query('SELECT * FROM users ...');
 var admin_user = db.query('SELECT * FROM users ...');
 ```
 
-[camelcase]: http://en.wikipedia.org/wiki/camelCase#Variations_and_synonyms
+## Use UpperCamelCase for class names
 
-## Class names
-
-Class names should be capitalized using [upper camel case][camelcase].
+Class names should be capitalized using `UpperCamelCase`.
 
 *Right:*
 
