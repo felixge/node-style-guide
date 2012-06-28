@@ -26,20 +26,6 @@ cheap syntactic pleasures.
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
-## Editors
-
-You can use any editor. However, having support for JS syntax highlighting and
-executing the currently open file with node.js will come in very handy. While
-[vim][vim] may not help you to impress the ladies or gents, it will please our
-[BDFL][bdfl] and your grandpa will also approve.
-
-I'm typing this document in Notes on my iPad, but that's because I'm on a beach
-in Thailand. It's likely that your own work environment will impact your choice
-of editor as well.
-
-[vim]: http://www.vim.org/
-[bdfl]: http://en.wikipedia.org/wiki/BDFL
-
 ## Trailing whitespace
 
 Just like you brush your teeth after every meal, you clean up any trailing
