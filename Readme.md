@@ -16,6 +16,12 @@ according to your preferences.
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
 spaces in your code - a special kind of hell is awaiting you otherwise.
 
+## Trailing whitespace
+
+Just like you brush your teeth after every meal, you clean up any trailing
+whitespace in your JS files before committing. Otherwise the rotten smell of
+careless neglect will eventually drive away contributors and/or co-workers.
+
 ## Use Semicolons
 
 According to [scientific research][hnsemicolons], the usage of semicolons is
@@ -26,17 +32,10 @@ cheap syntactic pleasures.
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
-## Trailing whitespace
-
-Just like you brush your teeth after every meal, you clean up any trailing
-whitespace in your JavaScript files before committing. Otherwise the rotten
-smell of careless neglect will eventually drive away contributors and/or
-co-workers.
-
 ## Line length
 
 Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
-last few years, but your brain hasn't. Use the additional room for split screen,
+last few years, but your brain has not. Use the additional room for split screen,
 your editor supports that, right?
 
 ## Quotes
@@ -45,15 +44,15 @@ Use single quotes, unless you are writing JSON.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var foo = 'bar';
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 var foo = "bar";
-~~~
+```
 
 ## Braces
 
@@ -61,20 +60,20 @@ Your opening braces go on the same line as the statement.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 if (true) {
   console.log('winning');
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 if (true)
 {
   console.log('losing');
 }
-~~~
+```
 
 Also, notice the use of whitespace before and after the condition statement.
 
@@ -86,7 +85,7 @@ declarations wherever they make sense.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var keys = ['foo', 'bar'];
 var values = [23, 42];
 
@@ -95,11 +94,11 @@ while (items.length) {
   var key = keys.pop();
   object[key] = values.pop();
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 var keys = ['foo', 'bar'],
     values = [23, 42],
     object = {},
@@ -109,7 +108,7 @@ while (items.length) {
   key = keys.pop();
   object[key] = values.pop();
 }
-~~~
+```
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
@@ -121,15 +120,15 @@ uncommon abbreviations should generally be avoided.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var adminUser = db.query('SELECT * FROM users ...');
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 var admin_user = db.query('SELECT * FROM users ...');
-~~~
+```
 
 [camelcase]: http://en.wikipedia.org/wiki/camelCase#Variations_and_synonyms
 
@@ -139,17 +138,17 @@ Class names should be capitalized using [upper camel case][camelcase].
 
 *Right:*
 
-~~~ {.javascript}
+```js
 function BankAccount() {
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 function bank_Account() {
 }
-~~~
+```
 
 ## Constants
 
@@ -162,23 +161,23 @@ ECMA standard.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var SECOND = 1 * 1000;
 
 function File() {
 }
 File.FULL_PERMISSIONS = 0777;
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 const SECOND = 1 * 1000;
 
 function File() {
 }
 File.fullPermissions = 0777; 
-~~~
+```
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
 
@@ -189,24 +188,24 @@ keys when your interpreter complains:
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var a = ['hello', 'world'];
 var b = {
   good: 'code',
   'is generally': 'pretty',
 };
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 var a = [
   'hello', 'world'
 ];
 var b = {"good": 'code'
         , is generally: 'pretty'
         };
-~~~
+```
 
 ## Equality operator
 
@@ -215,22 +214,22 @@ the triple equality operator as it will work just as expected.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var a = 0;
 if (a === '') {
   console.log('winning');
 }
 
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 var a = 0;
 if (a == '') {
   console.log('losing');
 }
-~~~
+```
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
@@ -241,16 +240,16 @@ special place in hell waiting for you if you don't obey this rule.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var a = [];
 if (!a.length) {
   console.log('winning');
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 Array.prototype.empty = function() {
   return !this.length;
 }
@@ -259,7 +258,7 @@ var a = [];
 if (a.empty()) {
   console.log('losing');
 }
-~~~
+```
 
 ## Conditions
 
@@ -267,20 +266,20 @@ Any non-trivial conditions should be assigned to a descriptive variable:
 
 *Right:*
 
-~~~ {.javascript}
+```js
 var isAuthorized = (user.isAdmin() || user.isModerator());
 if (isAuthorized) {
   console.log('winning');
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 if (user.isAdmin() || user.isModerator()) {
   console.log('losing');
 }
-~~~
+```
 
 ## Function length
 
@@ -295,7 +294,7 @@ as possible.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 function isPercentage(val) {
   if (val < 0) {
     return false;
@@ -307,11 +306,11 @@ function isPercentage(val) {
 
   return true;
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 function isPercentage(val) {
   if (val >= 0) {
     if (val < 100) {
@@ -323,17 +322,17 @@ function isPercentage(val) {
     return false;
   }
 }
-~~~
+```
 
 Or for this particular example it may also be fine to shorten things even
 further:
 
-~~~ {.javascript}
+```js
 function isPercentage(val) {
   var isInRange = (val >= 0 && val <= 100);
   return isInRange;
 }
-~~~
+```
 
 ## Named closures
 
@@ -342,19 +341,19 @@ will produce better stack traces:
 
 *Right:*
 
-~~~ {.javascript}
+```js
 req.on('end', function onEnd() {
   console.log('winning');
 });
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 req.on('end', function() {
   console.log('losing');
 });
-~~~
+```
 
 ## Nested Closures
 
@@ -362,7 +361,7 @@ Use closures, but don't nest them. Otherwise your code will become a mess.
 
 *Right:*
 
-~~~ {.javascript}
+```js
 setTimeout(function() {
   client.connect(afterConnect);
 }, 1000);
@@ -370,17 +369,17 @@ setTimeout(function() {
 function afterConnect() {
   console.log('winning');
 }
-~~~
+```
 
 *Wrong:*
 
-~~~ {.javascript}
+```js
 setTimeout(function() {
   client.connect(function() {
     console.log('losing');
   });
 }, 1000);
-~~~
+```
 
 ## Callbacks
 
@@ -409,9 +408,9 @@ providing a length property for a collection class.
 Node.js ships with a simple EventEmitter class that can be included from the
 'events' module:
 
-~~~ {.javascript}
+```js
 var EventEmitter = require('events').EventEmitter;
-~~~
+```
 
 When creating complex classes, it is common to inherit from this EventEmitter
 class to emit events. This is basically a simple implementation of the
