@@ -11,21 +11,18 @@ according to your preferences.
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
-## Tabs vs Spaces
+## 2 Spaces for indention
 
-Let's start with the religious problems first. Our [benevolent dictator][ryah]
-has chosen 2 space indention for the node core, so you would do well to follow
-his choice.
+Use 2 spaces for indenting your code. Never mix tabs and spaces.
 
-[ryah]: community.html#ryan-dahl
+## Use Semicolons
 
-## Semicolons
+According to [scientific research][hnsemicolons], the usage of semicolons is
+a core values of our community. Consider the points of [the opposition][], but
+be a traditionalist when it comes to abusing error correction mechanisms for
+cheap syntactic pleasures.
 
-There are [rebellious forces][isaac] that try to steal your semicolons from
-you. But make no mistake, our traditional culture is still [well and truly
-alive][hnsemicolons]. So follow the community, and use those semicolons!
-
-[isaac]: community.html#isaac-schlueter
+[the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
 ## Editors
