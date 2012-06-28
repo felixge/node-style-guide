@@ -32,13 +32,13 @@ cheap syntactic pleasures.
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
-## Line length
+## 80 characters per line
 
 Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
 last few years, but your brain has not. Use the additional room for split screen,
 your editor supports that, right?
 
-## Quotes
+## Use single quotes
 
 Use single quotes, unless you are writing JSON.
 
@@ -54,7 +54,7 @@ var foo = 'bar';
 var foo = "bar";
 ```
 
-## Braces
+## Opening braces go on the same line
 
 Your opening braces go on the same line as the statement.
 
@@ -148,7 +148,7 @@ function bank_Account() {
 }
 ```
 
-## Constants
+## Use UPPERCASE for Constants
 
 Constants should be declared as regular variables or static class properties,
 using all uppercase letters.
@@ -174,7 +174,7 @@ const SECOND = 1 * 1000;
 
 function File() {
 }
-File.fullPermissions = 0777; 
+File.fullPermissions = 0777;
 ```
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
@@ -205,7 +205,7 @@ var b = {"good": 'code'
         };
 ```
 
-## Equality operator
+## Use the === operator
 
 Programming is not about remembering [stupid rules][comparisonoperators]. Use
 the triple equality operator as it will work just as expected.
@@ -231,10 +231,10 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-## Extending prototypes
+## Do not extend built-in prototypes
 
-Do not extend the prototypes of any objects, especially native ones. There is a
-special place in hell waiting for you if you don't obey this rule.
+Do not extend the prototype of native JavaScript objects. Your future self will
+be forever grateful.
 
 *Right:*
 
@@ -258,7 +258,7 @@ if (a.empty()) {
 }
 ```
 
-## Conditions
+## Use descriptive conditions
 
 Any non-trivial conditions should be assigned to a descriptive variable:
 
@@ -279,13 +279,13 @@ if (user.isAdmin() || user.isModerator()) {
 }
 ```
 
-## Function length
+## Write small functions
 
 Keep your functions short. A good function fits on a slide that the people in
 the last row of a big room can comfortably read. So don't count on them having
-perfect vision and limit yourself to ~10 lines of code per function.
+perfect vision and limit yourself to ~15 lines of code per function.
 
-## Return statements
+## Return early from functions
 
 To avoid deep nesting of if-statements, always return a functions value as early
 as possible.
@@ -332,10 +332,10 @@ function isPercentage(val) {
 }
 ```
 
-## Named closures
+## Name your closures
 
 Feel free to give your closures a name. It shows that you care about them, and
-will produce better stack traces:
+will produce better stack traces, heap and cpu profiles.
 
 *Right:*
 
@@ -353,7 +353,7 @@ req.on('end', function() {
 });
 ```
 
-## Nested Closures
+## No nested closures
 
 Use closures, but don't nest them. Otherwise your code will become a mess.
 
@@ -379,14 +379,6 @@ setTimeout(function() {
 }, 1000);
 ```
 
-## Callbacks
-
-Since node is all about non-blocking I/O, functions generally return their
-results using callbacks. The convention used by the node core is to reserve the
-first parameter of any callback for an optional error object.
-
-You should use the same approach for your own callbacks.
-
 ## Object.freeze, Object.preventExtensions, Object.seal, with, eval
 
 Crazy shit that you will probably never need. Stay away from it.
@@ -400,31 +392,3 @@ Feel free to use getters that are free from [side effects][sideeffect], like
 providing a length property for a collection class.
 
 [sideeffect]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
-
-## EventEmitters
-
-Node.js ships with a simple EventEmitter class that can be included from the
-'events' module:
-
-```js
-var EventEmitter = require('events').EventEmitter;
-```
-
-When creating complex classes, it is common to inherit from this EventEmitter
-class to emit events. This is basically a simple implementation of the
-[Observer pattern][].
-
-[Observer pattern]: http://en.wikipedia.org/wiki/Observer_pattern
-
-However, I strongly recommend that you never listen to the events of your own
-class from within it. It isn't natural for an object to observe itself. It often
-leads to undesirable exposure to implementation details, and makes your code
-more difficult to follow.
-
-## Inheritance / Object oriented programming
-
-Inheritance and object oriented programming are subjects by themselves.
-If you're interested in following this popular programming model, please read my
-[Object oriented programming guide][].
-
-[Object oriented programming guide]: object_oriented_programming.html
