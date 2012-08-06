@@ -433,8 +433,10 @@ function loadUser(id, cb) {
   // ...
 }
 
+// Check if the session is valid
+var isSessionValid = (session.expires < Date.now());
 // If the session is valid
-if ((session.expires < Date.now())) {
+if (isSessionValid) {
   // ...
 }
 ```
