@@ -14,7 +14,7 @@ according to your preferences.
 ## 2 Spaces for indention
 
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
-spaces in your code - a special kind of hell is awaiting you otherwise.
+spaces - a special kind of hell is awaiting you otherwise.
 
 ## No trailing whitespace
 
