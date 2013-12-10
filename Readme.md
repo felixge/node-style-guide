@@ -16,6 +16,11 @@ according to your preferences.
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
 spaces - a special kind of hell is awaiting you otherwise.
 
+## Newlines
+
+Use UNIX-style newlines (`\n`), and a newline character as the last character
+of a file. Windows-style newlines (`\r\n`) are forbidden inside any repository.
+
 ## No trailing whitespace
 
 Just like you brush your teeth after every meal, you clean up any trailing
