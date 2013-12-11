@@ -310,7 +310,7 @@ perfect vision and limit yourself to ~15 lines of code per function.
 
 ## Return early from functions
 
-To avoid deep nesting of if-statements, always return a functions value as early
+To avoid deep nesting of if-statements, always return a function's value as early
 as possible.
 
 *Right:*
