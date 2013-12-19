@@ -283,13 +283,14 @@ if (a.empty()) {
 
 ## Use descriptive conditions
 
-Any non-trivial conditions should be assigned to a descriptive variable:
+Any non-trivial conditions should be assigned to a descriptively named variable or function:
 
 *Right:*
 
 ```js
-var isAuthorized = (user.isAdmin() || user.isModerator());
-if (isAuthorized) {
+var isValidPassword = passwd.length >= 4 && /^(?=.*\d).{4,}$/.test(passwd);
+
+if (isValidPassword()) {
   console.log('winning');
 }
 ```
@@ -297,7 +298,7 @@ if (isAuthorized) {
 *Wrong:*
 
 ```js
-if (user.isAdmin() || user.isModerator()) {
+if (passwd.length >= 4 && /^(?=.*\d).{4,}$/.test(passwd)) {
   console.log('losing');
 }
 ```
