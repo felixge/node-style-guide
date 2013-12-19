@@ -283,15 +283,18 @@ if (a.empty()) {
 
 ## Use descriptive conditions
 
-Any non-trivial conditions should be assigned to a descriptive variable:
+Any non-trivial conditions should be assigned to a descriptively named variable or function:
 
 *Right:*
 
 ```js
-var isAuthorized = (user.isAdmin() || user.isModerator());
-if (isAuthorized) {
+if (user.isAuthorized()) {
   console.log('winning');
 }
+
+User.prototype.isAuthorized = function() {
+  return this.isAdmin() || this.isModerator();
+};
 ```
 
 *Wrong:*
