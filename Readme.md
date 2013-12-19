@@ -288,19 +288,15 @@ Any non-trivial conditions should be assigned to a descriptively named variable 
 *Right:*
 
 ```js
-if (user.isAuthorized()) {
+if (this.isAuthorized()) {
   console.log('winning');
 }
-
-User.prototype.isAuthorized = function() {
-  return this.isAdmin() || this.isModerator();
-};
 ```
 
 *Wrong:*
 
 ```js
-if (user.isAdmin() || user.isModerator()) {
+if (this.isAdmin() || this.isModerator()) {
   console.log('losing');
 }
 ```
