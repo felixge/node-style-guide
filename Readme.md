@@ -30,7 +30,7 @@ careless neglect will eventually drive away contributors and/or co-workers.
 ## Use Semicolons
 
 According to [scientific research][hnsemicolons], the usage of semicolons is
-a core values of our community. Consider the points of [the opposition][], but
+a core value of our community. Consider the points of [the opposition][], but
 be a traditionalist when it comes to abusing error correction mechanisms for
 cheap syntactic pleasures.
 
