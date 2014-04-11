@@ -95,7 +95,7 @@ var keys   = ['foo', 'bar'];
 var values = [23, 42];
 
 var object = {};
-while (items.length) {
+while (keys.length) {
   var key = keys.pop();
   object[key] = values.pop();
 }
@@ -109,7 +109,7 @@ var keys = ['foo', 'bar'],
     object = {},
     key;
 
-while (items.length) {
+while (keys.length) {
   key = keys.pop();
   object[key] = values.pop();
 }
