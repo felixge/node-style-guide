@@ -86,6 +86,48 @@ if (true)
 
 Also, notice the use of whitespace before and after the condition statement.
 
+## Method chaining
+
+One method per line should be used if you want to chain methods.
+
+*Right:*
+
+```js
+User
+  .findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  })
+````
+
+*Wrong:*
+
+```js
+User
+.findOne({ name: 'foo' })
+.populate('bar')
+.exec(function(err, user) {
+  return true;
+})
+
+User.findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  })
+
+User.findOne({ name: 'foo' }).populate('bar')
+.exec(function(err, user) {
+  return true;
+})
+
+User.findOne({ name: 'foo' }).populate('bar')
+  .exec(function(err, user) {
+    return true;
+  })
+````
+
 ## Declare one variable per var statement
 
 Declare one variable per var statement, it makes it easier to re-order the
