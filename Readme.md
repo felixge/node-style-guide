@@ -98,7 +98,7 @@ User
   .populate('bar')
   .exec(function(err, user) {
     return true;
-  })
+  });
 ````
 
 *Wrong:*
@@ -109,23 +109,23 @@ User
 .populate('bar')
 .exec(function(err, user) {
   return true;
-})
+});
 
 User.findOne({ name: 'foo' })
   .populate('bar')
   .exec(function(err, user) {
     return true;
-  })
+  });
 
 User.findOne({ name: 'foo' }).populate('bar')
 .exec(function(err, user) {
   return true;
-})
+});
 
 User.findOne({ name: 'foo' }).populate('bar')
   .exec(function(err, user) {
     return true;
-  })
+  });
 ````
 
 ## Declare one variable per var statement
