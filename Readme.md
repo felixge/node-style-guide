@@ -90,6 +90,8 @@ Also, notice the use of whitespace before and after the condition statement.
 
 One method per line should be used if you want to chain methods.
 
+You should also indent these methods so it's easier to tell they are part of the same chain.
+
 *Right:*
 
 ```js
