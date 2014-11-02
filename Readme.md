@@ -15,6 +15,27 @@ according to your preferences.
 
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
+## Table of contents
+
+* [2 Spaces for indention](#2-spaces-for-indention)
+* [Newlines](#newlines)
+* [No trailing whitespace](#no-trailing-whitespace)
+* [Use Semicolons](#use-semicolons)
+* [80 characters per line](#80-characters-per-line)
+* [Use single quotes](#use-single-quotes)
+* [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
+* [Method chaining](#method-chaining)
+* [Declare one variable per var statement](#declare-one-variable-per-var-statement)
+* [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
+* [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
+* [Use UPPERCASE for Constants](#use-uppercase-for-constants)
+* [Object / Array creation](#object--array-creation)
+* [Use the === operator](#use-the--operator)
+* [Use multi-line ternary operator](#use-multi-line-ternary-operator)
+* [Use slashes for comments](#use-slashes-for-comments)
+* [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
+* [Getters and setters](#getters-and-setters)
+
 ## 2 Spaces for indention
 
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
