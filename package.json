@@ -1,0 +1,19 @@
+{
+  "name": "node-style-guide",
+  "description": "A guide for styling your node.js / JavaScript code.",
+  "version": "1.0.0",
+  "author": "Felix Geisendörfer <felix@debuggable.com> (http://debuggable.com/)",
+  "bugs": {
+    "url": "https://github.com/felixge/node-style-guide/issues"
+  },
+  "homepage": "https://github.com/felixge/node-style-guide#readme",
+  "keywords": [
+    "eslint",
+    "jshint"
+  ],
+  "license": "CC-BY-SA-3.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felixge/node-style-guide.git"
+  }
+}
