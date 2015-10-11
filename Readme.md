@@ -91,21 +91,23 @@ Your opening braces go on the same line as the statement.
 *Right:*
 
 ```js
-if (true) {
+if (true)
+{
   console.log('winning');
 }
+
+
+if(true) console.log('ok for one liners');
+
 ```
 
 *Wrong:*
 
 ```js
-if (true)
-{
+if (true){
   console.log('losing');
 }
 ```
-
-Also, notice the use of whitespace before and after the condition statement.
 
 ## Method chaining
 
@@ -151,12 +153,9 @@ User.findOne({ name: 'foo' }).populate('bar')
   });
 ````
 
-## Declare one variable per var statement
+## Variable declaration
 
-Declare one variable per var statement, it makes it easier to re-order the
-lines. However, ignore [Crockford][crockfordconvention] when it comes to
-declaring variables deeper inside a function, just put the declarations wherever
-they make sense.
+Declare variables as close as possible of the first time you will use it.
 
 *Right:*
 
@@ -185,13 +184,13 @@ while (keys.length) {
 }
 ```
 
-[crockfordconvention]: http://javascript.crockford.com/code.html
 
 ## Use lowerCamelCase for variables, properties and function names
 
 Variables, properties and function names should use `lowerCamelCase`.  They
 should also be descriptive. Single character variables and uncommon
 abbreviations should generally be avoided.
+
 
 *Right:*
 
@@ -223,7 +222,7 @@ function bank_Account() {
 }
 ```
 
-## Use UPPERCASE for Constants
+## Use UPPERCASE wrapped by __ for Constants
 
 Constants should be declared as regular variables or static class properties,
 using all uppercase letters.
@@ -239,7 +238,7 @@ var SECOND = 1 * 1000;
 
 function File() {
 }
-File.FULL_PERMISSIONS = 0777;
+File.__FULL_PERMISSIONS__ = 0777;
 ```
 
 *Wrong:*
@@ -250,6 +249,7 @@ const SECOND = 1 * 1000;
 function File() {
 }
 File.fullPermissions = 0777;
+File.FULL_PERMISSIONS = 0777;
 ```
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
@@ -280,19 +280,34 @@ var b = {"good": 'code'
         };
 ```
 
-## Use the === operator
+## Use === or == operators wisely
 
-Programming is not about remembering [stupid rules][comparisonoperators]. Use
-the triple equality operator as it will work just as expected.
+Programming is not about remembering [stupid rules][comparisonoperators].
 
 *Right:*
 
 ```js
-var a = 0;
-if (a !== '') {
+var a = component.getRandomUserInput();
+if (a !== 0) {
   console.log('winning');
 }
 
+var a = 0;
+if (a == 0) {
+  console.log('winning');
+}
+
+//If I'm using Number built-in type, it's ok to use the == operator
+var a = new Number('0');
+if (a == 0) {
+  console.log('winning');
+}
+
+//Scenario: the value o "a" comes from user input data and we want to test it
+var a = parseInt(input, 10);
+if (!isNaN(a) && a == 0) {
+  console.log('winning');
+}
 ```
 
 *Wrong:*
@@ -300,6 +315,11 @@ if (a !== '') {
 ```js
 var a = 0;
 if (a == '') {
+  console.log('losing');
+}
+
+var a = 0;
+if (a !== 0) {
   console.log('losing');
 }
 ```
@@ -326,8 +346,7 @@ var foo = (a === b) ? 1 : 2;
 
 ## Do not extend built-in prototypes
 
-Do not extend the prototype of native JavaScript objects. Your future self will
-be forever grateful.
+Prefer to not extend the prototype of native JavaScript objects.
 
 *Right:*
 
@@ -421,8 +440,7 @@ further:
 
 ```js
 function isPercentage(val) {
-  var isInRange = (val >= 0 && val <= 100);
-  return isInRange;
+  return (val >= 0 && val <= 100);
 }
 ```
 
@@ -516,17 +534,3 @@ if (isSessionValid) {
   // ...
 }
 ```
-
-## Object.freeze, Object.preventExtensions, Object.seal, with, eval
-
-Crazy shit that you will probably never need. Stay away from it.
-
-## Getters and setters
-
-Do not use setters, they cause more problems for people who try to use your
-software than they can solve.
-
-Feel free to use getters that are free from [side effects][sideeffect], like
-providing a length property for a collection class.
-
-[sideeffect]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
