@@ -344,7 +344,7 @@ var foo = (a === b)
 var foo = (a === b) ? 1 : 2;
 ```
 
-## Do not extend built-in prototypes
+## Avoid to extend built-in prototypes
 
 Prefer to not extend the prototype of native JavaScript objects.
 
