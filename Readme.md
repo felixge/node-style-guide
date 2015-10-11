@@ -1,19 +1,16 @@
 # Node.js Style Guide
 
-This is a guide for writing consistent and aesthetically pleasing node.js code.
-It is inspired by what is popular within the community, and flavored with some
-personal opinions.
+This is guide was forked from [Felix Geisendörfer node styleguide](https://github.com/felixge/node-style-guide)
+, I adapted it to meet my personal taste and opinion. Please check his original guide
+for a view more neutral and less opinionated than mine.
 
-There is a .jshintrc which enforces these rules as closely as possible. You can
-either use that and adjust it, or use
-[this script](https://gist.github.com/kentcdodds/11293570) to make your own.
 
 This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
 licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
 license. You are encouraged to fork this repository and make adjustments
 according to your preferences.
-
 ![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+
 
 ## Table of contents
 
@@ -23,18 +20,21 @@ according to your preferences.
 * [Use Semicolons](#use-semicolons)
 * [80 characters per line](#80-characters-per-line)
 * [Use single quotes](#use-single-quotes)
-* [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
+* [Opening braces go on the line below](#opening-braces-go-on-the-line-below)
 * [Method chaining](#method-chaining)
 * [Declare one variable per var statement](#declare-one-variable-per-var-statement)
 * [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
 * [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
-* [Use UPPERCASE for Constants](#use-uppercase-for-constants)
+* [Use UPPERCASE wrapped by "__" for Constants](#use-uppercase-wrapped-by-__-for-constants)
 * [Object / Array creation](#object--array-creation)
-* [Use the === operator](#use-the--operator)
-* [Use multi-line ternary operator](#use-multi-line-ternary-operator)
+* [Use === and == operators wisely](#use-===-and-==-operators-wisely)
+* [Avoid to extend built-in prototypes](#avoid-to-extend-built-in-prototypes)
+* [Use descriptive conditions](#use-descriptive-conditions)
+* [Write small functions](#write-small-functions)
+* [Return early from functions](#return-early-from-functions)
+* [Name your closures](#name-your-closures)
+* [No nested closures](#no-nested-closures)
 * [Use slashes for comments](#use-slashes-for-comments)
-* [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
-* [Getters and setters](#getters-and-setters)
 
 ## 2 Spaces for indention
 
@@ -84,9 +84,7 @@ var foo = 'bar';
 var foo = "bar";
 ```
 
-## Opening braces go on the same line
-
-Your opening braces go on the same line as the statement.
+## Opening braces go on the first line below
 
 *Right:*
 
@@ -280,7 +278,7 @@ var b = {"good": 'code'
         };
 ```
 
-## Use === or == operators wisely
+## Use === and == operators wisely
 
 Programming is not about remembering [stupid rules][comparisonoperators].
 
