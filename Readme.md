@@ -1,16 +1,19 @@
 # Node.js Style Guide
 
-This is guide was forked from [Felix Geisendörfer node styleguide](https://github.com/felixge/node-style-guide)
-, I adapted it to meet my personal taste and opinion. Please check his original guide
-for a view more neutral and less opinionated than mine.
+This is a guide for writing consistent and aesthetically pleasing node.js code.
+It is inspired by what is popular within the community, and flavored with some
+personal opinions.
 
+There is a .jshintrc which enforces these rules as closely as possible. You can
+either use that and adjust it, or use
+[this script](https://gist.github.com/kentcdodds/11293570) to make your own.
 
 This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
 licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
 license. You are encouraged to fork this repository and make adjustments
 according to your preferences.
-![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
+![Creative Commons License](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
 ## Table of contents
 
@@ -20,21 +23,27 @@ according to your preferences.
 * [Use Semicolons](#use-semicolons)
 * [80 characters per line](#80-characters-per-line)
 * [Use single quotes](#use-single-quotes)
-* [Opening braces go on the line below](#opening-braces-go-on-the-line-below)
+* [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
 * [Method chaining](#method-chaining)
 * [Declare one variable per var statement](#declare-one-variable-per-var-statement)
 * [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
 * [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
-* [Use UPPERCASE wrapped by "__" for Constants](#use-uppercase-wrapped-by-__-for-constants)
+* [Use UPPERCASE for Constants](#use-uppercase-for-constants)
 * [Object / Array creation](#object--array-creation)
-* [Use === and == operators wisely](#use-===-and-==-operators-wisely)
-* [Avoid to extend built-in prototypes](#avoid-to-extend-built-in-prototypes)
+* [Use the === operator](#use-the--operator)
+* [Use multi-line ternary operator](#use-multi-line-ternary-operator)
+* [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
 * [Use descriptive conditions](#use-descriptive-conditions)
 * [Write small functions](#write-small-functions)
 * [Return early from functions](#return-early-from-functions)
 * [Name your closures](#name-your-closures)
 * [No nested closures](#no-nested-closures)
 * [Use slashes for comments](#use-slashes-for-comments)
+* [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
+* [Getters and setters](#getters-and-setters)
+
+
+
 
 ## 2 Spaces for indention
 
@@ -84,28 +93,28 @@ var foo = 'bar';
 var foo = "bar";
 ```
 
-## Opening braces go on the first line below
+## Opening braces go on the same line
+
+Your opening braces go on the same line as the statement.
 
 *Right:*
 
 ```js
-if (true)
-{
+if (true) {
   console.log('winning');
 }
-
-
-if(true) console.log('ok for one liners');
-
 ```
 
 *Wrong:*
 
 ```js
-if (true){
+if (true)
+{
   console.log('losing');
 }
 ```
+
+Also, notice the use of whitespace before and after the condition statement.
 
 ## Method chaining
 
@@ -151,9 +160,12 @@ User.findOne({ name: 'foo' }).populate('bar')
   });
 ````
 
-## Variable declaration
+## Declare one variable per var statement
 
-Declare variables as close as possible of the first time you will use it.
+Declare one variable per var statement, it makes it easier to re-order the
+lines. However, ignore [Crockford][crockfordconvention] when it comes to
+declaring variables deeper inside a function, just put the declarations wherever
+they make sense.
 
 *Right:*
 
@@ -182,13 +194,13 @@ while (keys.length) {
 }
 ```
 
+[crockfordconvention]: http://javascript.crockford.com/code.html
 
 ## Use lowerCamelCase for variables, properties and function names
 
 Variables, properties and function names should use `lowerCamelCase`.  They
 should also be descriptive. Single character variables and uncommon
 abbreviations should generally be avoided.
-
 
 *Right:*
 
@@ -220,7 +232,7 @@ function bank_Account() {
 }
 ```
 
-## Use UPPERCASE wrapped by __ for Constants
+## Use UPPERCASE for Constants
 
 Constants should be declared as regular variables or static class properties,
 using all uppercase letters.
@@ -236,7 +248,7 @@ var SECOND = 1 * 1000;
 
 function File() {
 }
-File.__FULL_PERMISSIONS__ = 0777;
+File.FULL_PERMISSIONS = 0777;
 ```
 
 *Wrong:*
@@ -247,7 +259,6 @@ const SECOND = 1 * 1000;
 function File() {
 }
 File.fullPermissions = 0777;
-File.FULL_PERMISSIONS = 0777;
 ```
 
 [const]: https://developer.mozilla.org/en/JavaScript/Reference/Statements/const
@@ -278,34 +289,19 @@ var b = {"good": 'code'
         };
 ```
 
-## Use === and == operators wisely
+## Use the === operator
 
-Programming is not about remembering [stupid rules][comparisonoperators].
+Programming is not about remembering [stupid rules][comparisonoperators]. Use
+the triple equality operator as it will work just as expected.
 
 *Right:*
 
 ```js
-var a = component.getRandomUserInput();
-if (a !== 0) {
-  console.log('winning');
-}
-
 var a = 0;
-if (a == 0) {
+if (a !== '') {
   console.log('winning');
 }
 
-//If I'm using Number built-in type, it's ok to use the == operator
-var a = new Number('0');
-if (a == 0) {
-  console.log('winning');
-}
-
-//Scenario: the value o "a" comes from user input data and we want to test it
-var a = parseInt(input, 10);
-if (!isNaN(a) && a == 0) {
-  console.log('winning');
-}
 ```
 
 *Wrong:*
@@ -313,11 +309,6 @@ if (!isNaN(a) && a == 0) {
 ```js
 var a = 0;
 if (a == '') {
-  console.log('losing');
-}
-
-var a = 0;
-if (a !== 0) {
   console.log('losing');
 }
 ```
@@ -342,9 +333,10 @@ var foo = (a === b)
 var foo = (a === b) ? 1 : 2;
 ```
 
-## Avoid to extend built-in prototypes
+## Do not extend built-in prototypes
 
-Prefer to not extend the prototype of native JavaScript objects.
+Do not extend the prototype of native JavaScript objects. Your future self will
+be forever grateful.
 
 *Right:*
 
@@ -438,7 +430,8 @@ further:
 
 ```js
 function isPercentage(val) {
-  return (val >= 0 && val <= 100);
+  var isInRange = (val >= 0 && val <= 100);
+  return isInRange;
 }
 ```
 
@@ -532,3 +525,17 @@ if (isSessionValid) {
   // ...
 }
 ```
+
+## Object.freeze, Object.preventExtensions, Object.seal, with, eval
+
+Crazy shit that you will probably never need. Stay away from it.
+
+## Getters and setters
+
+Do not use setters, they cause more problems for people who try to use your
+software than they can solve.
+
+Feel free to use getters that are free from [side effects][sideeffect], like
+providing a length property for a collection class.
+
+[sideeffect]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
