@@ -43,8 +43,6 @@ according to your preferences.
 * [Getters and setters](#getters-and-setters)
 
 
-
-
 ## 2 Spaces for indention
 
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
