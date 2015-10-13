@@ -32,9 +32,16 @@ according to your preferences.
 * [Object / Array creation](#object--array-creation)
 * [Use the === operator](#use-the--operator)
 * [Use multi-line ternary operator](#use-multi-line-ternary-operator)
+* [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
+* [Use descriptive conditions](#use-descriptive-conditions)
+* [Write small functions](#write-small-functions)
+* [Return early from functions](#return-early-from-functions)
+* [Name your closures](#name-your-closures)
+* [No nested closures](#no-nested-closures)
 * [Use slashes for comments](#use-slashes-for-comments)
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
 * [Getters and setters](#getters-and-setters)
+
 
 ## 2 Spaces for indention
 
