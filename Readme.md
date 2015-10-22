@@ -40,7 +40,9 @@ according to your preferences.
 * [No nested closures](#no-nested-closures)
 * [Use slashes for comments](#use-slashes-for-comments)
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
+* [Requires At Top](#Requires At Top)
 * [Getters and setters](#getters-and-setters)
+
 
 
 ## 2 Spaces for indention
@@ -523,6 +525,10 @@ if (isSessionValid) {
 ## Object.freeze, Object.preventExtensions, Object.seal, with, eval
 
 Crazy shit that you will probably never need. Stay away from it.
+
+## Requires At Top
+
+Always put requires at top of file to clearly illustrate a file's dependencies. Besides giving an overview for others at a quick glance of dependencies and possible memory impact, it allows one to determine if they need a package.json file should they choose to use the file elsewhere.
 
 ## Getters and setters
 
