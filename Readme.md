@@ -17,6 +17,7 @@ according to your preferences.
 
 ## Table of contents
 
+### Formatting
 * [2 Spaces for indention](#2-spaces-for-indention)
 * [Newlines](#newlines)
 * [No trailing whitespace](#no-trailing-whitespace)
@@ -24,23 +25,36 @@ according to your preferences.
 * [80 characters per line](#80-characters-per-line)
 * [Use single quotes](#use-single-quotes)
 * [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
-* [Method chaining](#method-chaining)
+
 * [Declare one variable per var statement](#declare-one-variable-per-var-statement)
+
+### Naming Conventions
 * [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
 * [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
+
+### Variables
 * [Object / Array creation](#object--array-creation)
+
+### Conditionals
 * [Use the === operator](#use-the--operator)
 * [Use multi-line ternary operator](#use-multi-line-ternary-operator)
-* [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
 * [Use descriptive conditions](#use-descriptive-conditions)
+
+### Functions
 * [Write small functions](#write-small-functions)
 * [Return early from functions](#return-early-from-functions)
 * [Name your closures](#name-your-closures)
 * [No nested closures](#no-nested-closures)
+* [Method chaining](#method-chaining)
+
+### Comments
 * [Use slashes for comments](#use-slashes-for-comments)
+
+### Miscellaneous
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
 * [Getters and setters](#getters-and-setters)
+* [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
 
 
 ## 2 Spaces for indention
@@ -113,50 +127,6 @@ if (true)
 ```
 
 Also, notice the use of whitespace before and after the condition statement.
-
-## Method chaining
-
-One method per line should be used if you want to chain methods.
-
-You should also indent these methods so it's easier to tell they are part of the same chain.
-
-*Right:*
-
-```js
-User
-  .findOne({ name: 'foo' })
-  .populate('bar')
-  .exec(function(err, user) {
-    return true;
-  });
-````
-
-*Wrong:*
-
-```js
-User
-.findOne({ name: 'foo' })
-.populate('bar')
-.exec(function(err, user) {
-  return true;
-});
-
-User.findOne({ name: 'foo' })
-  .populate('bar')
-  .exec(function(err, user) {
-    return true;
-  });
-
-User.findOne({ name: 'foo' }).populate('bar')
-.exec(function(err, user) {
-  return true;
-});
-
-User.findOne({ name: 'foo' }).populate('bar')
-  .exec(function(err, user) {
-    return true;
-  });
-````
 
 ## Declare one variable per var statement
 
@@ -479,6 +449,52 @@ setTimeout(function() {
   });
 }, 1000);
 ```
+
+
+## Method chaining
+
+One method per line should be used if you want to chain methods.
+
+You should also indent these methods so it's easier to tell they are part of the same chain.
+
+*Right:*
+
+```js
+User
+  .findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+````
+
+*Wrong:*
+
+```js
+User
+.findOne({ name: 'foo' })
+.populate('bar')
+.exec(function(err, user) {
+  return true;
+});
+
+User.findOne({ name: 'foo' })
+  .populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+
+User.findOne({ name: 'foo' }).populate('bar')
+.exec(function(err, user) {
+  return true;
+});
+
+User.findOne({ name: 'foo' }).populate('bar')
+  .exec(function(err, user) {
+    return true;
+  });
+````
+
 
 ## Use slashes for comments
 
