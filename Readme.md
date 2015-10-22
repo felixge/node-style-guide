@@ -235,10 +235,6 @@ function bank_Account() {
 Constants should be declared as regular variables or static class properties,
 using all uppercase letters.
 
-Node.js / V8 actually supports mozilla's [const][const] extension, but
-unfortunately that cannot be applied to class members, nor is it part of any
-ECMA standard.
-
 *Right:*
 
 ```js
