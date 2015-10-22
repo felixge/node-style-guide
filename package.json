@@ -12,6 +12,7 @@
     "jshint"
   ],
   "license": "CC-BY-SA-3.0",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/felixge/node-style-guide.git"
