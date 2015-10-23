@@ -52,10 +52,12 @@ according to your preferences.
 
 ### Miscellaneous
 * [Object.freeze, Object.preventExtensions, Object.seal, with, eval](#objectfreeze-objectpreventextensions-objectseal-with-eval)
+* [Requires At Top](#Requires At Top)
 * [Getters and setters](#getters-and-setters)
 * [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
 
 ## Formatting
+
 
 ### 2 Spaces for indention
 
@@ -206,10 +208,6 @@ function bank_Account() {
 
 Constants should be declared as regular variables or static class properties,
 using all uppercase letters.
-
-Node.js / V8 actually supports mozilla's [const][const] extension, but
-unfortunately that cannot be applied to class members, nor is it part of any
-ECMA standard.
 
 *Right:*
 
@@ -527,6 +525,10 @@ if (isSessionValid) {
 ### Object.freeze, Object.preventExtensions, Object.seal, with, eval
 
 Crazy shit that you will probably never need. Stay away from it.
+
+### Requires At Top
+
+Always put requires at top of file to clearly illustrate a file's dependencies. Besides giving an overview for others at a quick glance of dependencies and possible memory impact, it allows one to determine if they need a package.json file should they choose to use the file elsewhere.
 
 ### Getters and setters
 
