@@ -18,7 +18,7 @@ according to your preferences.
 ## Table of contents
 
 ### Formatting
-* [2 Spaces for indention](#2-spaces-for-indention)
+* [2 Spaces for indentation](#2-spaces-for-indentation)
 * [Newlines](#newlines)
 * [No trailing whitespace](#no-trailing-whitespace)
 * [Use Semicolons](#use-semicolons)
@@ -59,7 +59,7 @@ according to your preferences.
 ## Formatting
 
 
-### 2 Spaces for indention
+### 2 Spaces for indentation
 
 Use 2 spaces for indenting your code and swear an oath to never mix tabs and
 spaces - a special kind of hell is awaiting you otherwise.
