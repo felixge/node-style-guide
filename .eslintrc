@@ -23,7 +23,7 @@
     "object-curly-spacing": [2, "never"],
     "quotes": [2, "single", "avoid-escape"],
     "semi": [2, "always"],
-    "space-after-keywords": [2, "always"],
+    "keyword-spacing": [2, {"before": true, "after": true}],
     "space-unary-ops": 2
   }
 }
