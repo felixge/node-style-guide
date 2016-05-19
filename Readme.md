@@ -58,6 +58,7 @@ according to your preferences.
 
 ## Formatting
 
+You may want to use [editorconfig.org](http://editorconfig.org/) to enforce the formatting settings in your editor. Use the [Node.js Style Guide .editorconfig file](.editorconfig) to have indentation, newslines and whitespace behavior automatically set to the rules set up below.
 
 ### 2 Spaces for indentation
 
